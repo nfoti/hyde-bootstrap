@@ -1,16 +1,8 @@
-{% macro render_main_menu() -%}
-
-{% for menu_item in menu -%}
-  <li{% if menu_item.url == resource.url or menu_item.active %} class="active"{% endif %}><a href="{{ menu_item.url }}">{{ menu_item.title }}</a></li>
+{% macro render_navbar_items() -%}
+{# Moved the <ul></ul> to the template so it's easier to mess with style #}
+<!--<ul class="nav nav-pills red">-->
+{% for nav_item in navbar -%}
+    <li{% if nav_item.url == resource.url or nav_item.active %} class="active"{% endif %}><a href="{{ nav_item.url }}">{{ nav_item.title }}</a></li>
 {%- endfor %}
-
-{%- endmacro %}
-
-{% macro render_sidebar() -%}
-<ul class="nav nav-list">
-    <li class="nav-header">Sidebar</li>
-{% for sidebar_item in sidebar -%}
-  <li{% if sidebar_item.url == resource.url or sidebar_item.active %} class="active"{% endif %}><a href="{{ sidebar_item.url }}">{{ sidebar_item.title }}</a></li>
-{%- endfor %}
-</ul>
+<!--</ul>-->
 {%- endmacro %}

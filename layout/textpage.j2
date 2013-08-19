@@ -1,0 +1,9 @@
+{# Page with just text formatted with Markdown #}
+
+{% extends "navside.j2" %}
+
+{% block boxcontents%}
+  {% filter markdown -%}
+  {% block boxtext %}{% endblock %}
+  {%- endfilter %}
+{% endblock boxcontents %}

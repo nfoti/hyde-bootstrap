@@ -3,7 +3,8 @@
   <head>
     {% block starthead %}{% endblock starthead %}
     <meta charset="{{ resource.meta.charset }}">
-    <title>{% block title %}{{ resource.meta.title }}{% endblock %} | {{ site_title }}</title>
+    {#<title>{% block title %}{{ resource.meta.title }}{% endblock %} | {{ site_title }}</title>#}
+    <title>{{ site_title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ resource.meta.description }}">
     <meta name="author" content="{{ resource.meta.author }}">
@@ -14,7 +15,10 @@
     <![endif]-->
 
     {% block basecss %}
-    <link href="{{ media_url('css/bootstrap.css') }}" rel="stylesheet">
+    {# change to this at some point #}
+    <link href="{{ media_url('css/bootstrap.min.css') }}" rel="stylesheet">
+    {#<link href="{{ media_url('css/bootstrap-responsive.min.css) }}" rel="stylesheet">#}
+    <link href="{{ media_url('css/nf.css') }}" rel="stylesheet">
     <style type="text/css">
         body {
             padding-top: 60px;
@@ -43,39 +47,37 @@
     {% endblock basecss %}
     {% block css %}{% endblock %}
 
-
-
-    {% block favicons %}
+    {# No favicons now #}
     {# Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references #}
+    {#
+    {% block favicons %}
     <link rel="shortcut icon" href="{{ media_url('img/favicon.ico') }}">
     <link rel="apple-touch-icon" href="{{ media_url('img/apple-touch-icon.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ media_url('img/appleimgim-touch-icon-72x72.png') }}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{ media_url('img/apple-touch-icon-114x114.png') }}">
-    {% endblock favicons %}
+    {% endblock favicons %}#}
 
     {% block headjs %}
     {% endblock headjs %}
 
     {% block endhead %}{% endblock endhead %}
+    {#
     {% block analytics %}
     {% include "analytics.j2" %}
     {% endblock analytics %}
+    #}
   </head>
 
   <body class="{{ resource.meta.id if resource.meta.id else resource.slug }}">
 
     {% block body %}
 
-    <div class="container" id="top">
+    <!--<div class="container" id="top">-->
+    <div class="container">
       {% block container %}
 
       {% endblock container %}
-      <hr>
-      <footer>
-        {% block footer %}
-        <p>Created by <a href="{{ author.url }}">{{ author.name }}</a></p>
-        {% endblock footer %}
-      </footer>
+
     </div> <!-- /container -->
 
     {% endblock body %}

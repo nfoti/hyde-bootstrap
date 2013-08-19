@@ -6,14 +6,26 @@ plugins:
     - hyde.ext.plugins.auto_extend.AutoExtendPlugin
     - hyde.ext.plugins.syntext.SyntextPlugin
     - hyde.ext.plugins.textlinks.TextlinksPlugin
+    #- hyde.ext.plugins.meta.SorterPlugin
+    #- hyde.ext.plugins.meta.GrouperPlugin
+    #- hyde.ext.plugins.meta.TaggerPlugin
 context:
     data:
-        site_title: Pupil Labs
+        site_title: Nick Foti
         author:
-            name: Pupil Labs - William Patera and Moritz Kassner
-            url: "http://pupil-labs.com"
-        google_analytics_id: UA-XXXXX-YY
+            name: Nick Foti
+            url: "http://nfoti.github.io"
+            email: "n dot lastname at uw dot edu"
+            office: "?? Padelford Hall"
+        #google_analytics_id: UA-XXXXX-YY
         home_url: index.html
+        navbar:
+            - title: About
+              url: index.html
+            - title: Publications
+              url: publications.html
+            - title: Blog
+              url: "http://cs.dartmouth.edu/~nfoti/blog"
         menu:
             - title: Home
               url: index.html
@@ -24,3 +36,4 @@ context:
               url: one.html
             - title: Two
               url: \#
+

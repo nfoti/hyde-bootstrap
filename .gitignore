@@ -3,4 +3,3 @@ layout/deploy
 *.DS_Store
 *.log
 *.pyc
-bootstrap

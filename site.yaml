@@ -15,8 +15,8 @@ context:
         author:
             name: Nick Foti
             url: "http://nfoti.github.io"
-            email: "n dot lastname at uw dot edu"
-            office: "?? Padelford Hall"
+            email: "firstinitiallastname at uw dot edu"
+            office: "B-316 Padelford Hall"
         #google_analytics_id: UA-XXXXX-YY
         home_url: index.html
         navbar:
@@ -31,9 +31,4 @@ context:
               url: index.html
             - title: Landing
               url: landing.html
-        sidebar:
-            - title: One
-              url: one.html
-            - title: Two
-              url: \#
 

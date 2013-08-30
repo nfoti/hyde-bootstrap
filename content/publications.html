@@ -42,9 +42,10 @@
       <div class="col-md-9 col-md-offset-3">
         <div id="navigation">
           <ul class="nav nav-pills red">
-            <li><a href="index.html">About</a></li>
-            <li class="active"><a href="#">Publications</a></li>
-            <li class="visible-xs visible-sm"><a href="contact.html">Contact</a></li>
+          {% from "macros.j2" import render_navbar_items with context %}
+          {{ render_navbar_items() }}
+          {# Add contact.html in manually b/c it's a special case, can probably do it with site.yaml. #}
+          <li class="visible-xs visible-sm"><a href="contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -62,11 +63,9 @@
           <h4 style="text-align:left;">Contact Info</h4>
           <div>
             <h5>e-mail:</h5>
-            <p style="text-size:5;">n dot lastname at uw dot edu</p>
+            <p style="text_size:5;">{{ author.email }}</p>
             <h5>office:</h5>
-            ?? Padelford
-            <h5>phone:</h5>
-            603-646-8743
+            {{ author.office }}
           </div>
         </div>
       </div>
@@ -107,15 +106,17 @@
                   <a id="aistats2013thin_link">[bibtex]</a>
                   <div class="alert" id="aistats2013thin" style="display:none">
                       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                      <span style="font-family:'Courier New';color:#222222;line-height:5px">
+                      <span style="font-family:'Courier New';color:#222222;line-height:0.5">
+                      <p>
                           @incollection{Foti:Futoma:Williamson:Rockmore:2012,<br/>
                       title = {A unifying representation for a class of
                       dependent random measures},<br/>
                       author = {Nicholas J. Foti and Joseph D. Futoma and
                                 Sinead Williamson and Daniel N. Rockmore},<br/>
                       booktitle = {Artificial Intelligence and Statistics},<br/>
-                      year = {2013}
+                      year = {2013} <br/>
                       }
+                      </p>
                      </span>
               </ul>
             </div>
@@ -133,6 +134,7 @@
                 <div class="alert" id="nips2012slice" style="display:none">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                     <span style="font-family:'Courier New';color:#222222;line-height:0.5">
+                    <p>
                         @incollection{Foti:Williamson:2012,<br/>
                     title = {Slice sampling normalized kernel-weighted
                     completely random measure mixture models},<br/>
@@ -142,8 +144,9 @@
                     editor = {P. Bartlett and F.C.N. Pereira and C.J.C. Burges
                     and L. Bottou and K.Q. Weinberger},<br/>
                     pages = {2249--2257},<br/>
-                    year = {2012}
+                    year = {2012} <br/>
                     }
+                    </p>
                    </span>
                 </div>
                 </li>
@@ -156,6 +159,7 @@
                     <div class="alert" id="pnas2012" style="display:none">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         <span style="font-family:'Courier New';color:#222222;line-height:0.5">
+                        <p>
                             @article{Hughes:Foti:Krakauer:Rockmore:2012,<br/>
                             title={Quantitative patterns of stylistic influence
                             in the evolution of literature.},<br/>
@@ -165,8 +169,9 @@
                             volume={109},<br/>
                             number={20},<br/>
                             pages={7682-6},<br/>
-                            year={2012}
+                            year={2012} <br/>
                             }
+                        </p>
                         </span>
                     </div>
 
@@ -186,6 +191,7 @@
                   <div class="alert" id="plosone2011" style="display:none">
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                       <span style="font-family:'Courier New';color:#222222;line-height:0.5">
+                      <p>
                       @article{Foti:Hughes:Rockmore:2011,
                       author = {Foti, Nicholas J. and Hughes, James M. and
                       Rockmore, Daniel N.},<br/>
@@ -197,7 +203,9 @@
                       volume = {6},<br/>
                       url = {http://dx.doi.org/10.1371%2Fjournal.pone.0016431},<br/>
                       pages = {e16431},<br/>
-                      number = {2} }   
+                      number = {2} <br/>
+                      }
+                      </p>
                       </span>
                   </div>
 
